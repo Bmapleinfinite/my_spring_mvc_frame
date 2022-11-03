@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <context-param>
+    <param-name>config</param-name>
+    <param-value>com.springway.app.AppConfig</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>com.springway.listener.AppListener</listener-class>
+  </listener>
+
+  <filter>
+    <filter-name>CharacterFilter</filter-name>
+    <filter-class>com.springway.filter.CharacterFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <servlet-class>com.springway.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+
+</web-app>
